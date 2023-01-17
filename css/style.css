@@ -1,0 +1,90 @@
+@import url(https://fonts.bunny.net/css?family=jetbrains-mono:500,600);
+
+/* PALETTE DE COULEUR 
+#211A1D NOIR RAISIN SEC
+#FB8B24 DARK ORANGE
+#8075ff BLEU ARDOISE MOYEN
+#CAD5CA GRIS CENDRÉ
+#E4572E FLAMME*/
+
+body {
+    background: rgb(128,117,255);
+    background: radial-gradient(circle, rgba(128,117,255,1) 45%, rgba(202,213,202,1) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.4);
+    width: 550px;
+    height: 700px;
+    padding: 50px;
+    border-radius: 25px;
+    
+}
+
+.screen {
+    width: 100%;
+    text-align: end;
+    background: rgba(255, 255, 255, 0.8);
+    height: calc(100% / 6);
+    border-radius: 25px;
+    font-size: 5.5rem;
+}
+
+.calc-buttons-line {
+    height: 20%;
+}
+
+.calc-buttons {
+    width: 100%;
+    height: 534px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.calc-button-triple {
+    width: calc(75% - 5px);
+    height: 90%;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 0;
+}
+
+.calc-button-double {
+    width: calc(50% - 7px);
+    height: 90%;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 0;
+}
+
+.calc-button {
+    width: calc(25% - 8px);
+    height: 90%;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 0;
+}
+
+.calc-button-triple:hover, .calc-button-double:hover , .calc-button:hover {
+    transition: background-color 0.7s ease;
+    background-color: #d3dfff;
+}
+.operation {
+    background-color: #E4572E;
+    color: white;
+}
+
+.operation:hover {
+    transition: background-color 0.7s ease;
+    background-color: #df6a46;
+}
+
+button {
+    font-size: 3rem;
+}
