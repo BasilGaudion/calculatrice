@@ -22,30 +22,3 @@ for (const button of buttons) {
 // if (chiffres.className = "add") {
 //     screen.textContent += currentValue;
 // }
-
-
-
-
-// const buttons = document.querySelectorAll('.calc-button');
-// buttons.forEach(button => {
-//     button.addEventListener('click', (e) => {
-//         const value = e.target.value;
-//         const classList = e.target.classList;
-
-//         if (classList.contains('clear')) {
-//             clear();
-//         } else if (classList.contains('erase')) {
-//             erase();
-//         } else if (classList.contains('calc-button-number')) {
-//             addNumber(value);
-//         } else if (classList.contains('dot')) {
-//             addDecimal();
-//         } else if (classList.contains('operation')) {
-//             setOperation(value);
-//         } else if (classList.contains('equal')) {
-//             calculate();
-//         }
-//     });
-// });
-
-// document.addEventListener('DOMContentLoaded', calculate.init);
