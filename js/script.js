@@ -1,35 +1,51 @@
-let calculate = {
-    // Function who initialize the script
-    init: function() {
-        calculate.clickListener()
-    },
+// const screen = document.querySelector('.screen p');
+const buttons = document.querySelectorAll('.calc-button, .calc-button-double');
+let currentValue = "0";
 
-    // function that places an event listener on each button
-     clickListener: function() {
-        const screen = document.querySelector('.screen').addEventListener('click', calculate.handleClickCalcul);
-        const clear = document.querySelector('.clear').addEventListener('click', calculate.handleClickCalcul);
-        const arrow = document.querySelector('.arrow').addEventListener('click', calculate.handleClickCalcul);
-        const divide = document.querySelector('.divide').addEventListener('click', calculate.handleClickCalcul);
-        const seven = document.querySelector('.seven').addEventListener('click', calculate.handleClickCalcul);
-        const eight = document.querySelector('.eight').addEventListener('click', calculate.handleClickCalcul);
-        const nine = document.querySelector('.nine').addEventListener('click', calculate.handleClickCalcul);
-        const multiply = document.querySelector('.multiply').addEventListener('click', calculate.handleClickCalcul);
-        const four = document.querySelector('.four').addEventListener('click', calculate.handleClickCalcul);
-        const five = document.querySelector('.five').addEventListener('click', calculate.handleClickCalcul);
-        const six = document.querySelector('.six').addEventListener('click', calculate.handleClickCalcul);
-        const substract = document.querySelector('.substract').addEventListener('click', calculate.handleClickCalcul);
-        const one = document.querySelector('.one').addEventListener('click', calculate.handleClickCalcul);
-        const two = document.querySelector('.two').addEventListener('click', calculate.handleClickCalcul);
-        const three = document.querySelector('.three').addEventListener('click', calculate.handleClickCalcul);
-        const add = document.querySelector('.add').addEventListener('click', calculate.handleClickCalcul);
-        const zero = document.querySelector('.zero').addEventListener('click', calculate.handleClickCalcul);
-        const equal = document.querySelector('.equal').addEventListener('click', calculate.handleClickCalcul);
-     },
+// We place an event listener at the click on each button 
+for (const button of buttons) {
+    button.addEventListener('click', event => {
+        // console.log(event.target.textContent);
+        const chiffres = event.target.textContent;
+        console.log(chiffres);
+        const screen = document.getElementById("screen");
+        screen.textContent = chiffres;
 
-     handleClickCalcul: function(event) {
-        event.preventDefault();
         
-     }
+    });
 }
 
-document.addEventListener('DOMContentLoaded', calculate.init);
+// const plus = document.getElementById("add");
+
+
+
+// if (chiffres.className = "add") {
+//     screen.textContent += currentValue;
+// }
+
+
+
+
+// const buttons = document.querySelectorAll('.calc-button');
+// buttons.forEach(button => {
+//     button.addEventListener('click', (e) => {
+//         const value = e.target.value;
+//         const classList = e.target.classList;
+
+//         if (classList.contains('clear')) {
+//             clear();
+//         } else if (classList.contains('erase')) {
+//             erase();
+//         } else if (classList.contains('calc-button-number')) {
+//             addNumber(value);
+//         } else if (classList.contains('dot')) {
+//             addDecimal();
+//         } else if (classList.contains('operation')) {
+//             setOperation(value);
+//         } else if (classList.contains('equal')) {
+//             calculate();
+//         }
+//     });
+// });
+
+// document.addEventListener('DOMContentLoaded', calculate.init);
