@@ -15,7 +15,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: 'JetBrains Mono';
 }
 
 .container {
@@ -38,7 +38,16 @@ body {
     justify-content: flex-end;
     align-items: center;
     margin: 0;
-    padding-right: 20px;
+    
+}
+
+#screen p {
+    width: 100%;
+    padding: 0px 15px;
+}
+
+.minus {
+    font-size: 3.5rem;
 }
 
 .calc-buttons-line {
@@ -80,12 +89,17 @@ body {
     transition: background-color 0.5s ease;
     background-color: #d3dfff;
 }
-.operation {
+.calc-button-operator, .calc-button-result{
     background-color: #E4572E;
     color: white;
 }
 
-.operation:hover {
+.calc-button-operator:hover {
+    transition: background-color 0.7s ease;
+    background-color: #bd4f2e;
+}
+
+.calc-button-result:hover {
     transition: background-color 0.7s ease;
     background-color: #bd4f2e;
 }
@@ -93,3 +107,4 @@ body {
 button {
     font-size: 3rem;
 }
+

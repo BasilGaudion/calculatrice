@@ -10,7 +10,9 @@
 </head>
 <body>
     <div class="container">
-        <p id="screen">0</p>
+        <div id="screen">
+            <p></p>
+        </div>
 
         <section class="calc-buttons">
             <div class="calc-buttons-line">
@@ -22,9 +24,7 @@
                     &#x21E6;
                 </button>
 
-                <button class="calc-button operation divide">
-                    &#xF7;
-                </button>
+                <button class="calc-button calc-button-operator divide" value="/">&#xF7;</button>
 
             </div>
 
@@ -41,9 +41,7 @@
                     9
                 </button>
 
-                <button class="calc-button operation multiply">
-                    x
-                </button>
+                <button class="calc-button calc-button-operator multiply" value="*">x</button>
                 
             </div>
 
@@ -60,9 +58,7 @@
                     6
                 </button>
 
-                <button class="calc-button operation substract">
-                    -
-                </button>
+                <button class="calc-button calc-button-operator substract" value="-">-</button>
                 
             </div>
 
@@ -79,9 +75,7 @@
                     3
                 </button>
 
-                <button class="calc-button operation add" id="add">
-                    +
-                </button>
+                <button class="calc-button calc-button-operator add" value="+">+</button>
                 
             </div>
 
@@ -90,11 +84,11 @@
                     0
                 </button>
 
-                <button class="calc-button dot">
+                <button class="calc-button calc-button-number dot" value=".">
                     .
                 </button>
 
-                <button class="calc-button-double operation equal">
+                <button class="calc-button-double calc-button-result equal">
                     =
                 </button>
 
