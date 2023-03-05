@@ -2,7 +2,7 @@
 let firstNumber = '';
 let operator = '';
 let secondNumber = '';
-let result = 0;
+let result = false;
 
 // Initialisation of our eventListeners
  function init() {
@@ -37,6 +37,19 @@ function handleInteger(event) {
     const screen = document.querySelector('#screen').children[0];
     let valueInt = event.currentTarget.value;
 
+    // Gestion des erreurs 
+    if (screen.textContent == 'NaN') {
+        return
+    }
+  
+    if (result !== false) {
+        return
+    }
+    
+    if (screen.textContent == 'false') {
+        screen.textContent = 'NaN';
+        return
+    }
     // Condition de vidage si un operateur à été saisi alors on vide l'ecran pour afficher les chiffres cliqués
     if (screen.textContent == operator){
         screen.textContent = '';
@@ -59,23 +72,33 @@ function handleInteger(event) {
 }
 
 function handleOperator(event) {
-    // Récuperation des elements screen et Stockage du premier chiffre
+    // Récuperation des elements screen
     const screen = document.querySelector('#screen').children[0];
     const valueOperator= event.currentTarget.value;
 
+    // Si on a deja fais un result alors on stop la fonction
+    if (result !== false) {
+        return
+    }
+    // Si l'ecran comporte une erreur alors on arrete la fonction 
+    if (screen.textContent == 'NaN') {
+        return
+    }
+    if (screen.textContent == 'false') {
+        screen.textContent = 'NaN';
+        return
+    }
     // On retire la classe minus pour l'operateur
     screen.classList.remove('minus');
 
     // Stockage de l'opérateur
     operator = valueOperator;
-    console.log(operator);
 
     // Affichge du contenu sur le screen
     screen.textContent = valueOperator;
 }   
 
 function handleResult() {
-
     // Récupération de l'élément screen
     const screen = document.querySelector('#screen').children[0];
 
@@ -96,6 +119,18 @@ function handleErase() {
     // Récupération de l'élément screen
     const screen = document.querySelector('#screen').children[0];
 
+    // Si on a deja fais un result alors on stop la fonction
+    if (result !== false) {
+        return
+    }
+    // Si l'ecran comporte une erreur alors on arrete la fonction 
+    if (screen.textContent == 'NaN') {
+        return
+    }
+    if (screen.textContent == 'false') {
+        screen.textContent = 'NaN';
+        return
+    }
     // Supression du dernier element de la chaine de caractère
     screen.textContent = screen.textContent.slice(0, -1);
 }
@@ -109,6 +144,7 @@ function handleClear() {
     firstNumber = '';
     operator = '';
     secondNumber = '';
+    result = false;
 }
 
 function textSize() {
@@ -116,9 +152,10 @@ function textSize() {
     const screen = document.querySelector('#screen').children[0];
 
     // Condition pour la longueur de la chaine de charactères contenue dans le screen 
-    if (screen.innerHTML.length > 15) {
-        screen.textContent = screen.textContent.slice(0, -1);
-        } else if (screen.innerHTML.length > 9) {
+    // if (screen.innerHTML.length > 15) {
+    //     screen.textContent = screen.textContent.slice(0, -1);
+    //     } 
+        if (screen.innerHTML.length > 9) {
                 screen.classList.add('minus');
         } else {
                 screen.classList.remove('minus');

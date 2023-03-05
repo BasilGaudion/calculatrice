@@ -35,7 +35,7 @@ body {
     border-radius: 25px;
     font-size: 5.5rem;
     display: flex;
-    justify-content: flex-end;
+    /* justify-content: flex-end; */
     align-items: center;
     margin: 0;
     
@@ -43,7 +43,10 @@ body {
 
 #screen p {
     width: 100%;
-    padding: 0px 15px;
+    padding: 0px 10px;
+    overflow: hidden;
+    direction: rtl;
+    text-align: right;
 }
 
 .minus {
@@ -102,6 +105,10 @@ body {
 .calc-button-result:hover {
     transition: background-color 0.7s ease;
     background-color: #bd4f2e;
+}
+
+button:active {
+    background-color: #8075ff;
 }
 
 button {
