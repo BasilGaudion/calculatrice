@@ -113,6 +113,12 @@ function handleResult() {
         result = parseFloat(firstNumber) / parseFloat(secondNumber);
     }
     screen.textContent = result.toString();
+
+    // On rempli firstnumber avec notre valeur à l'ecran et on vide les autres pour pouvoir continuer à calculer
+    firstNumber = screen.textContent;
+    operator = "";
+    secondNumber = "";
+    result = false;
 }
 
 function handleErase() {
